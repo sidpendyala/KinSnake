@@ -42,6 +42,7 @@ export default function Dashboard() {
   const [direction, setDirection] = useState<Direction>({ x: 1, y: 0 })
   const [recentDirections, setRecentDirections] = useState<string[]>([])
   const lastDirectionRef = useRef<Direction>({ x: 1, y: 0 })
+  const lastGestureRef = useRef<string>("")
   const [handLandmarks, setHandLandmarks] = useState<any>(null)
   
   // Backend mode toggle
@@ -91,7 +92,12 @@ export default function Dashboard() {
       if (!isOpposite) {
         setDirection(newDirection)
         lastDirectionRef.current = newDirection
-        setRecentDirections(prev => [directionName, ...prev.slice(0, 2)])
+        
+        // Only update recent directions if it's a different gesture
+        if (lastGestureRef.current !== directionName) {
+          setRecentDirections(prev => [directionName, ...prev.slice(0, 2)])
+          lastGestureRef.current = directionName
+        }
       }
     }
   }, [gameState])
@@ -140,7 +146,12 @@ export default function Dashboard() {
         // Immediate direction update
         setDirection(newDirection)
         lastDirectionRef.current = newDirection
-        setRecentDirections(prev => [directionName, ...prev.slice(0, 2)])
+        
+        // Only update recent directions if it's a different gesture
+        if (lastGestureRef.current !== directionName) {
+          setRecentDirections(prev => [directionName, ...prev.slice(0, 2)])
+          lastGestureRef.current = directionName
+        }
       }
     }
   }, [])
@@ -403,6 +414,7 @@ export default function Dashboard() {
     setIsNewBest(false)
     setDirection({ x: 1, y: 0 })
     lastDirectionRef.current = { x: 1, y: 0 }
+    lastGestureRef.current = ""
     setRecentDirections([])
     announceToScreenReader("Game reset. Ready to start.")
     // Automatically start if we're restarting from completion
@@ -467,7 +479,12 @@ export default function Dashboard() {
         if (!isOpposite) {
           setDirection(newDirection)
           lastDirectionRef.current = newDirection
-          setRecentDirections(prev => [directionName, ...prev.slice(0, 2)])
+          
+          // Only update recent directions if it's a different gesture
+          if (lastGestureRef.current !== directionName) {
+            setRecentDirections(prev => [directionName, ...prev.slice(0, 2)])
+            lastGestureRef.current = directionName
+          }
         }
       }
     }
