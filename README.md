@@ -297,14 +297,6 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Next.js Team** - Amazing React framework
 - **FastAPI** - Modern Python web framework
 
-## 📞 Support
-
-Having issues? Check these resources:
-1. [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) - Detailed technical docs
-2. [Troubleshooting](#-troubleshooting) section above
-3. Backend terminal logs for error messages
-4. Browser console for frontend errors
-
 ---
 
 **Built with Python, C, Next.js, React, and ❤️**
