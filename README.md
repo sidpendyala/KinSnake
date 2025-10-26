@@ -1,6 +1,6 @@
 # 🐍 KinSnake - Hand Gesture Controlled Snake Game
 
-A modern, fully-integrated snake game controlled by hand gestures with AI-powered voice feedback. Built with Next.js, Python, C, and MediaPipe.
+A modern, fully-integrated snake game controlled by hand gestures. Built with Next.js, Python, C, and MediaPipe.
 
 ## ✨ Features
 
@@ -17,6 +17,7 @@ A modern, fully-integrated snake game controlled by hand gestures with AI-powere
 - **C Systems Controller** - Demonstrates IPC via Windows named pipes
 - **MediaPipe Hand Tracking** - Professional-grade hand landmark detection
 - **Dual Tracking Modes** - Browser-based or backend processing
+- **Responsive UI** - Modern interface with smooth animations
 
 ## 🏗️ Architecture
 
@@ -181,12 +182,6 @@ lsof -i :8000
 kill -9 <PID>
 ```
 
-### Voice Not Working
-
-1. Check `backend/.env` file exists with valid API key
-2. Ensure internet connection is active
-3. Look for "[SERVER] Voice narration enabled" in backend terminal
-4. Try running `backend/setup_voice.py` for interactive setup
 
 ### C Controller Not Responding
 
@@ -217,8 +212,7 @@ KinSnake/
 ├── backend/                          # Python backend
 │   ├── server.py                    # FastAPI WebSocket server
 │   ├── hand_tracking.py             # Standalone hand tracker
-│   ├── setup_voice.py               # Voice setup helper
-│   ├── requirements_server.txt      # Python dependencies
+│   ├── requirements_server.txt        # Python dependencies
 │   └── c_controller/                # C motion controller
 │       ├── motion_controller_persistent.c
 │       └── motion_controller_persistent.exe
@@ -282,6 +276,7 @@ This project demonstrates advanced concepts in:
 - **Uvicorn** - ASGI server
 - **MediaPipe** - Hand tracking
 - **OpenCV** - Computer vision
+- **WebSocket** - Real-time communication
 
 ### Systems
 - **C** - Motion controller
@@ -315,5 +310,7 @@ Having issues? Check these resources:
 **Built with Python, C, Next.js, React, and ❤️**
 
 🐍 Point your finger and play! 👆✨
+
+---
 
 Built by Siddharth Pendyala, Palash Doshi, Viraj Mishra, Keshav Khandelwal
