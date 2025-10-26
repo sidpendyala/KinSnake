@@ -53,9 +53,7 @@ C Controller (motion_controller_persistent.exe)
    ```bash
    cd backend
    python -m venv venv
-   venv\Scripts\activate  # Windows
-   # or
-   source venv/bin/activate  # Mac/Linux
+   venv\Scripts\activate
    pip install -r requirements_server.txt
    ```
    
@@ -68,15 +66,8 @@ C Controller (motion_controller_persistent.exe)
 
 #### Option 1: Start Everything at Once (Recommended)
 
-**Windows:**
 ```bash
 start-all.bat
-```
-
-**Mac/Linux:**
-```bash
-chmod +x start-all.sh  # First time only
-./start-all.sh
 ```
 
 This opens two terminal windows:
@@ -87,20 +78,12 @@ This opens two terminal windows:
 
 **Terminal 1 - Backend:**
 ```bash
-# Windows
 start-backend.bat
-
-# Mac/Linux
-./start-backend.sh
 ```
 
 **Terminal 2 - Frontend:**
 ```bash
-# Windows
 start-frontend.bat
-
-# Mac/Linux
-./start-frontend.sh
 ```
 
 ### Access the Game
@@ -137,68 +120,7 @@ The game shows real-time status of backend components:
 - 🟢 **Server: Connected** - WebSocket connection active
 - 🟢 **C Controller: Running** - Motion controller operational
 
-### Frontend Installation Issues
-
-**Problem:** npm peer dependency conflicts
-```bash
-npm error ERESOLVE could not resolve
-npm error Conflicting peer dependency: better-auth@1.3.31
-```
-
-**Solution:** Install with legacy peer deps flag
-```bash
-npm install --legacy-peer-deps
-```
-
-Or clean install:
-```bash
-# Windows
-rmdir /s /q node_modules
-del package-lock.json
-npm install --legacy-peer-deps
-
-# Mac/Linux
-rm -rf node_modules package-lock.json
-npm install --legacy-peer-deps
-```
-
-**Note:** The startup scripts now automatically use `--legacy-peer-deps` flag.
-
-### Backend Won't Start
-
-**Port 8000 already in use:**
-```bash
-# Windows
-netstat -ano | findstr :8000
-taskkill /F /PID <PID>
-
-# Mac/Linux
-lsof -i :8000
-kill -9 <PID>
-```
-
-
-### C Controller Not Responding
-
-```bash
-# Windows
-taskkill /f /im motion_controller_persistent.exe
-
-# Then restart backend
-```
-
-### Camera Issues
-
-1. Grant camera permissions in browser
-2. Ensure no other app is using camera
-3. Try refreshing the page
-4. Check browser console for error messages
-
-### WebSocket Connection Failed
-
-1. Verify backend is running (`http://localhost:8000` should respond)
-2. Check firewall isn't blocking port 8000
-3. Ensure both frontend and backend are running
+If any component shows red, restart the backend server.
 
 ## 📁 Project Structure
 
@@ -221,9 +143,9 @@ KinSnake/
 │   └── hooks/
 │       ├── useBackendConnection.ts  # Backend WebSocket hook
 │       └── useHandGestureDetection.ts
-├── start-all.bat / .sh              # Start everything
-├── start-backend.bat / .sh          # Start backend only
-├── start-frontend.bat / .sh         # Start frontend only
+├── start-all.bat                    # Start everything
+├── start-backend.bat                # Start backend only
+├── start-frontend.bat               # Start frontend only
 └── README.md                        # This file
 ```
 
