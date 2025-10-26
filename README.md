@@ -8,7 +8,6 @@ A modern, fully-integrated snake game controlled by hand gestures. Built with Ne
 - **Hand Gesture Control** - Point your finger to control the snake (UP, DOWN, LEFT, RIGHT)
 - **60-Second Challenge** - Race against time to eat as many apples as possible
 - **Beautiful UI** - Purple-themed modern interface with animations
-- **Keyboard Support** - Arrow keys and WASD for traditional control
 - **Accessibility** - High contrast mode, reduced motion, screen reader support
 
 ### 🔧 Technical Features
@@ -102,10 +101,6 @@ start-frontend.bat
 - **Point DOWN** - Snake moves down
 - **Point LEFT** - Snake moves left
 - **Point RIGHT** - Snake moves right
-
-### Keyboard Controls (Alternative)
-- **Arrow Keys** or **WASD** - Control snake direction
-- Works alongside hand gestures
 
 ### Game Rules
 - Eat apples (red dots) to grow your snake
