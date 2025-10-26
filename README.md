@@ -29,7 +29,6 @@ Python Backend (FastAPI)
 C Controller (motion_controller_persistent.exe)
 ```
 
-See [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) for detailed architecture documentation.
 
 ## 🚀 Quick Start
 
@@ -137,10 +136,6 @@ The game shows real-time status of backend components:
 
 - 🟢 **Server: Connected** - WebSocket connection active
 - 🟢 **C Controller: Running** - Motion controller operational
-
-If any component shows red, see [Troubleshooting](#-troubleshooting).
-
-## 🐛 Troubleshooting
 
 ### Frontend Installation Issues
 
@@ -255,10 +250,7 @@ This project demonstrates advanced concepts in:
 
 ## 📚 Documentation
 
-- **[INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md)** - Complete technical architecture and API docs
-- **[PERFORMANCE_OPTIMIZATION.md](PERFORMANCE_OPTIMIZATION.md)** - Performance tuning and optimization guide
 - **[backend/README.md](backend/README.md)** - Backend-specific documentation
-- **[backend/HOW_TO_RUN.md](backend/HOW_TO_RUN.md)** - Original backend running guide
 
 ## 🛠️ Technology Stack
 
