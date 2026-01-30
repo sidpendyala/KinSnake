@@ -1,6 +1,6 @@
 # 🐍 KinSnake - Hand Gesture Controlled Snake Game
 
-A modern, fully-integrated snake game controlled by hand gestures. Built with Next.js, Python, C, and MediaPipe.
+A modern and fully-integrated snake game controlled by hand gestures. Built with Next.js, Python, C, and MediaPipe.
 
 ## ✨ Features
 
